@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2242575909079855532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8800159712676118949}
+  - component: {fileID: 5651232684947205791}
+  - component: {fileID: 6198369705936976488}
+  - component: {fileID: 8432022789694531671}
+  - component: {fileID: 5856764388396060624}
+  - component: {fileID: 1049602571091056976}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8800159712676118949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0734393, y: -4.8056827, z: 0.030990338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5651232684947205791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29396b2386b25fd4c90ff66c4b19de6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueHistoryTracker: {fileID: 6198369705936976488}
+  LocationHistoryTracker: {fileID: 8432022789694531671}
+  persistentObjects: []
+--- !u!114 &6198369705936976488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87020e12c07fc2446b32686f4ecb323f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8432022789694531671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04747b560c190424f8065aa43c9ccfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5856764388396060624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c393d420800e49f48966246829e74069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pendingSaveData:
+    player:
+      currentScene: 
+      posX: 0
+      posY: 0
+      posZ: 0
+      exp: 0
+      level: 0
+    stats:
+      playerName: "\u5192\u9669\u8005"
+      health: 20
+      maxHealth: 0
+      damage: 0
+      magic: 5
+      defense: 2
+      magicDefense: 2
+      spirit: 1
+      speed: 0
+      vitality: 1
+      dodge: 1
+      luck: 1
+      weaponRange: 0
+      knockbackForce: 0
+      knockbackTime: 0
+      stunTime: 0
+    skillTree:
+      slotDataList: []
+      availablePoints: 0
+    quests:
+      activeQuests: []
+      completedQuestNames: []
+    inventory:
+      slots: []
+      gold: 0
+  loadScreen: {fileID: 0}
+  slider: {fileID: 0}
+  percent: {fileID: 0}
+--- !u!114 &1049602571091056976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242575909079855532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a239e0b00412ead4781e24c26cb0f69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allItems:
+  - {fileID: 11400000, guid: baac274192677f342a897551ef523d1c, type: 2}
+  - {fileID: 11400000, guid: d6681d648d6555e448de4bf19299a132, type: 2}
+  - {fileID: 11400000, guid: 9a884633d62289044920f641f7b4e2de, type: 2}
+  allQuests:
+  - {fileID: 11400000, guid: a57009956b346f44c95374588a4bcae4, type: 2}
+  - {fileID: 11400000, guid: b0e091b6f4585ed47951347a66a94fdd, type: 2}
+  - {fileID: 11400000, guid: 86617a723f54f4041a87bc3515e61abd, type: 2}
+  allDialogues:
+  - {fileID: 11400000, guid: 59ee4afc089f3634e95cf2200625c434, type: 2}
+  - {fileID: 11400000, guid: cf333a8933f79e64e9f22405b8f7bdcf, type: 2}
+  - {fileID: 11400000, guid: e29cc8c326059d947872bd18a8d1ac84, type: 2}
+  - {fileID: 11400000, guid: fb001ee01fc448f4bba33f8ba5bb3f5c, type: 2}
+  - {fileID: 11400000, guid: 9e04f650413af164ab73ebf9e73dc05a, type: 2}
+  - {fileID: 11400000, guid: e7a9989e2989edc469c2dc420ef7601d, type: 2}
+  - {fileID: 11400000, guid: 78097a95dce390443bc2fd2a221213dd, type: 2}
+  - {fileID: 11400000, guid: 94d32c0acc486cc42a436626efe9f3c2, type: 2}
+  - {fileID: 11400000, guid: a54503c8f6973c840a8150b194467a40, type: 2}
+  - {fileID: 11400000, guid: b2221e3718f4e86448f70537b6ef2325, type: 2}
+  - {fileID: 11400000, guid: cc9c1b453468cd34f993dc5ef6d9c54d, type: 2}
+  - {fileID: 11400000, guid: d293d296191fce84aac3ac17cf878999, type: 2}
+  - {fileID: 11400000, guid: 6253562a86b1dc546b0171805964a52f, type: 2}
+  - {fileID: 11400000, guid: 3b4b6b022b34867478379a69ef03ccef, type: 2}
+  - {fileID: 11400000, guid: 1be54b9cddf14cd42ae3704a1b6e8c29, type: 2}
+  allActors:
+  - {fileID: 11400000, guid: 01671350e5c971947bd190d4783146ef, type: 2}
+  - {fileID: 11400000, guid: 6fdc71c3860884841902b34c4cf3da5c, type: 2}
+  - {fileID: 11400000, guid: ee0d5346d94734f4fa3e5d6ea185428c, type: 2}
+  - {fileID: 11400000, guid: 566419b91b2d9a741999124d71e8be1a, type: 2}
+  - {fileID: 11400000, guid: 07edf7ac0e2f6c742a366eac0425aacc, type: 2}

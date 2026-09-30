@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae54cab62d1a5548bb23620db6c8760, type: 3}
+  m_Name: Rock_Middle
+  m_EditorClassIdentifier: 
+  itemName: "\u5C0F\u77F3\u5934"
+  itemDescription: "\u4E00\u5757\u666E\u901A\u7684\u77F3\u5934"
+  icon: {fileID: 734693907, guid: 6f40cb50219a9df488f83e13d6fee1eb, type: 3}
+  isGold: 0
+  isEXP: 0
+  stackSize: 64
+  currentHealth: 0
+  maxHealth: 0
+  speed: 0
+  damage: 0
+  duration: 0

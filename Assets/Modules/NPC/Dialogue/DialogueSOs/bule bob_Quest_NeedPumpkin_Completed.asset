@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ff5a546915a2c4188cfc1cb9e83052, type: 3}
+  m_Name: bule bob_Quest_NeedPumpkin_Completed
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 01671350e5c971947bd190d4783146ef, type: 2}
+    text: "\u8C22\u8C22\u4F60\u7684\u5357\u74DC\u3002"
+  options: []
+  offerQuestOnEnd: {fileID: 0}
+  requiredCompletedQuests: {fileID: 11400000, guid: b0e091b6f4585ed47951347a66a94fdd, type: 2}
+  requiredNPCs: []
+  requiredLocations: []
+  requiredItems:
+  - {fileID: 11400000, guid: d6681d648d6555e448de4bf19299a132, type: 2}
+  removeAfterPlay: 1
+  removeTheseOnPlay:
+  - {fileID: 11400000, guid: cf333a8933f79e64e9f22405b8f7bdcf, type: 2}
