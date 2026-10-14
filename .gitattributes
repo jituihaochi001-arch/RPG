@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Build artifacts are binary; do not let Git convert their line endings.
+/Builds/** binary
