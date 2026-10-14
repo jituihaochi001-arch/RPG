@@ -187,6 +187,25 @@ public class InventoryManager : MonoBehaviour
         return total;
     }
 
+    // ===== 新游戏时清空背包与金币 =====
+    public void ResetToDefault()
+    {
+        foreach (var slot in itemSlots)
+        {
+            if (slot == null) continue;
+
+            slot.itemSO = null;
+            slot.quantity = 0;
+            slot.UpdateUI();
+        }
+
+        gold = 0;
+        if (goldText != null)
+        {
+            goldText.text = gold.ToString();
+        }
+    }
+
     #region 保存数据
     // ===== 数据转换方法 =====
     public InventorySaveData GetSaveData()

@@ -80,4 +80,22 @@ public class GameManager : MonoBehaviour
     {
         return hasPlayerStartPosition;
     }
+
+    // ===== 新游戏时清理与流程相关的运行时状态 =====
+    public void ResetNewGameState()
+    {
+        // 清空上一次场景传送留下的出生点，让新游戏使用场景里的默认出生位置
+        playerStartPosition = Vector2.zero;
+        hasPlayerStartPosition = false;
+
+        if (DialogueHistoryTracker != null)
+        {
+            DialogueHistoryTracker.Clear();
+        }
+
+        if (LocationHistoryTracker != null)
+        {
+            LocationHistoryTracker.Clear();
+        }
+    }
 }

@@ -40,6 +40,13 @@ public class SaveManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    // ===== 新游戏时取消尚未应用的读档数据 =====
+    public void CancelPendingLoad()
+    {
+        pendingSaveData = null;
+        currentSlotIndex = 0;
+    }
+
     // ===== 获取存档路径 =====
     private string GetSavePath(int slotIndex)
     {

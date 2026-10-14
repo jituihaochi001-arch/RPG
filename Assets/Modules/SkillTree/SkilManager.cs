@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class SkilManager : MonoBehaviour
@@ -53,6 +52,12 @@ public class SkilManager : MonoBehaviour
             default:
                 Debug.LogWarning("未知技能: " + skillName);
                 break;
+        }
+
+        // 技能加点后统一通知生命值 UI 刷新，避免最大生命值变化后 HUD 不更新
+        if (StatsManager.Instance != null)
+        {
+            StatsManager.Instance.RefreshHealthUI();
         }
     }
 }

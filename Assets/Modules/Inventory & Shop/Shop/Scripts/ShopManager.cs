@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class ShopManager : MonoBehaviour
 {  
@@ -37,6 +36,13 @@ public class ShopManager : MonoBehaviour
         ShopEvents.OnItemBought -= HandleBuy;
         ShopEvents.OnItemSold -= HandleSell;
     }
+
+    // ===== 新游戏时重置商店状态 =====
+    public void ResetToDefault()
+    {
+        IsOnShop = false;
+    }
+
     // ===== 填充商店物品 =====
     public void PopulateShopItems(List<ShopItems> shopItems)
     {

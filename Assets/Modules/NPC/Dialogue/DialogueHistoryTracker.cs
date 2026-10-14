@@ -20,4 +20,10 @@ public class DialogueHistoryTracker : MonoBehaviour
     {
         return spokenNPCs.Contains(actorSO);
     }
+
+    // ===== 新游戏时清空对话历史 =====
+    public void Clear()
+    {
+        spokenNPCs.Clear();
+    }
 }

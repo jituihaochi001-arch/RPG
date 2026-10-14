@@ -1,7 +1,7 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorCtrl : MonoBehaviour
 {
@@ -33,6 +33,22 @@ public class CursorCtrl : MonoBehaviour
     }
     void Start()
     {
+        // 自定义光标只负责显示，关闭 Graphic 的射线检测，避免挡住下拉框等 UI 的点击
+        foreach (Graphic graphic in GetComponentsInChildren<Graphic>(true))
+        {
+            if (graphic != null)
+            {
+                graphic.raycastTarget = false;
+            }
+        }
+
+        // 把光标所在的 Canvas 放到最上层，保证下拉框展开时不会盖住鼠标图标
+        Canvas cursorCanvas = GetComponentInParent<Canvas>();
+        if (cursorCanvas != null)
+        {
+            cursorCanvas.sortingOrder = 999;
+        }
+
         Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Confined;
     }

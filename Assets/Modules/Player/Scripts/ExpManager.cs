@@ -15,9 +15,13 @@ public class ExpManager : MonoBehaviour
     public TMP_Text currentLevelText;
     public static event Action<int> OnLevelUp;
 
+    // 记录升级曲线的初始经验需求，避免新游戏重置时使用了已经成长过的数值
+    private int defaultExpToLevel;
+
     private void Awake()
     {
         Instance = this;
+        defaultExpToLevel = expToLevel;
     }
     private void Start()
     {
@@ -50,10 +54,27 @@ public class ExpManager : MonoBehaviour
         expToLevel = Mathf.RoundToInt(expToLevel * expGrowthMultiplier);
         OnLevelUp?.Invoke(1);
     }
+
+    // ===== 新游戏时重置等级与经验 =====
+    public void ResetToDefault()
+    {
+        level = 0;
+        currentExp = 0;
+        expToLevel = defaultExpToLevel;
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
-        expSlider.maxValue = expToLevel;
-        expSlider.value = currentExp;
-        currentLevelText.text = "Level: "+level;
+        if (expSlider != null)
+        {
+            expSlider.maxValue = expToLevel;
+            expSlider.value = currentExp;
+        }
+
+        if (currentLevelText != null)
+        {
+            currentLevelText.text = "Level: "+level;
+        }
     }
 }

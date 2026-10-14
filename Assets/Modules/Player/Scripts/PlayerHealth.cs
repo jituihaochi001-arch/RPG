@@ -12,26 +12,39 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        healthText.text = "HP:" + StatsManager.Instance.CurrentHealth + "/" + StatsManager.Instance.MaxHealth;
+        // 统一走 UpdateHealthUI，避免重复维护刷新逻辑
         UpdateHealthUI(0);
     }
     private void OnEnable()
     {
-        StatsManager.Instance.OnHealthChanged += UpdateHealthUI;       
+        if (StatsManager.Instance == null) return;
+
+        StatsManager.Instance.OnHealthChanged += UpdateHealthUI;
+        // 面板/对象重新启用时立即刷新一次，避免禁用期间错过属性变化
+        UpdateHealthUI(0);
     }
 
     private void OnDisable()
     {
-        StatsManager.Instance.OnHealthChanged -= UpdateHealthUI;   
+        if (StatsManager.Instance == null) return;
+
+        StatsManager.Instance.OnHealthChanged -= UpdateHealthUI;
     }
     public void UpdateHealthUI(int amount)
     {
-        
+        if (StatsManager.Instance == null) return;
+
         healthText.text = "HP:" + StatsManager.Instance.CurrentHealth + "/" + StatsManager.Instance.MaxHealth;
-        healthTextAnim.Play("TextUpdate");
-        
-        healthSlider.maxValue = StatsManager.Instance.MaxHealth;
-        healthSlider.value = StatsManager.Instance.CurrentHealth;
+        if (healthTextAnim != null)
+        {
+            healthTextAnim.Play("TextUpdate");
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = StatsManager.Instance.MaxHealth;
+            healthSlider.value = StatsManager.Instance.CurrentHealth;
+        }
        
     }
 }

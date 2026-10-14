@@ -91,6 +91,16 @@ public class QuestManager : MonoBehaviour
     }
 #endregion
 
+    // ===== 新游戏时清空任务进度与已完成任务 =====
+    public void ResetToDefault()
+    {
+        questProgress.Clear();
+        completeQuests.Clear();
+
+        // 任务数据被清空后，通知任务日志 UI 刷新，避免界面残留上一个存档的任务
+        QuestEvents.TriggerQuestDataReset();
+    }
+
     //更新任务进程
     public void UpdateObjectiveProgress(QuestSO questSO,QuestObjective objective)
     {

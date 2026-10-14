@@ -28,11 +28,13 @@ public class QuestLogUI : MonoBehaviour
     {
         QuestEvents.OnQuestOfferRequested += ShowQuestOffer;
         QuestEvents.OnQuestTurnInRequested += ShowQuestTurnIn;
+        QuestEvents.OnQuestDataReset += RefreshQuestList;
     }
     private void OnDisable()
     {
         QuestEvents.OnQuestOfferRequested -= ShowQuestOffer;
         QuestEvents.OnQuestTurnInRequested -= ShowQuestTurnIn;
+        QuestEvents.OnQuestDataReset -= RefreshQuestList;
     }
 
     #region 展示任务画布

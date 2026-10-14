@@ -19,5 +19,11 @@ public class LocationHistoryTracker : MonoBehaviour
     {
         return locationsVisited.Contains(locationSO);
     }
+
+    // ===== 新游戏时清空地点访问历史 =====
+    public void Clear()
+    {
+        locationsVisited.Clear();
+    }
 }
 

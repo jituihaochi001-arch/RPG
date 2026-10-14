@@ -19,6 +19,10 @@ public static class QuestEvents
         OnExperienceGained?.Invoke(amount);
     }
 
-
-
+    //任务数据重置事件（新游戏时用于刷新任务日志 UI）
+    public static event Action OnQuestDataReset;
+    public static void TriggerQuestDataReset()
+    {
+        OnQuestDataReset?.Invoke();
+    }
 }

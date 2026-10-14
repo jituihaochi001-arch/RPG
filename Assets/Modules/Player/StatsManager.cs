@@ -63,7 +63,7 @@ public class StatsManager : MonoBehaviour
                 break;
             case StatType.MaxHealth:
                 data.maxHealth += amount;
-                OnHealthChanged?.Invoke(0);
+                RefreshHealthUI();
                 break;
             case StatType.Damage:
                 data.damage += amount;
@@ -127,6 +127,21 @@ public class StatsManager : MonoBehaviour
         {
             statsUI.UpdateAllStats();
         }
+    }
+
+    // ===== 主动通知生命值 UI 重新读取数据 =====
+    public void RefreshHealthUI()
+    {
+        OnHealthChanged?.Invoke(data.health);
+    }
+
+    // ===== 新游戏时重置为默认属性 =====
+    public void ResetToDefault()
+    {
+        data = new StatsData();
+        UpdateUI();
+        OnHealthChanged?.Invoke(data.health);
+        OnNameChanged?.Invoke(data.playerName);
     }
 
     // ===== 获取存档数据 =====
